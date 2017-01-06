@@ -42,7 +42,5 @@ def classify(inX, dataSet, labels, k):
     sortedClassCount = sorted(classCount.items(), key=operator.itemgetter(1), reverse=True)
     return sortedClassCount[0][0]
 
-# 测试
-group, labels = createDataSet()
-result = classify([0, 0], group, labels, 3)
-print(result) #B
+
+
