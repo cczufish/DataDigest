@@ -12,15 +12,17 @@ def loadDataSet():
     classVec = [0, 1, 0, 1, 0, 1]  # 1 is abusive 滥用的; 骂人的, 0 not
     return postingList, classVec
 
-#创建一个包含在所有文档中出现的不重复词的列表
+
+# 创建一个包含在所有文档中出现的不重复词的列表
 def createVocabList(dataSet):
     vocabSet = set([])
     for document in dataSet:
-        vocabSet = vocabSet | set(document)#  | 表示求两个集合的并集 set是无序的
+        vocabSet = vocabSet | set(document)  # | 表示求两个集合的并集 set是无序的
     return list(vocabSet)
 
-#输入参数为词汇表及某个文档
-#输出的是文档向量
+
+# 输入参数为词汇表及某个文档
+# 输出的是文档向量
 def setOfWords2Vec(vocabList, inputSet):
     returnVec = [0] * len(vocabList)
     for word in inputSet:
